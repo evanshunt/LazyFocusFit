@@ -1,0 +1,4 @@
+SilverStripe\Assets\Image:
+  extensions:
+    - EvansHunt\LazyFocusFit\LazyFocusFitImageExtension
+  force_resample: true

@@ -1,0 +1,23 @@
+{
+    "name": "evanshunt/lazy-focus-fit",
+    "description": "Template methods to quickly make use of FocusPoint, LazySizes, and Object-fit",
+    "type": "silverstripe-vendormodule",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "EvansHunt\\LazyFocusFit\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David Toews",
+            "email": "davejtoews@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "jonom/focuspoint": "^4.0",
+        "silverstripe/framework": "^4",
+        "silverstripe/cms": "^4"
+    }
+}
