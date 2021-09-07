@@ -46,7 +46,7 @@ class LazyFocusFitImageExtension extends DataExtension
 
         $this->populateResponsiveImageAttributes($arguments);
 
-        return $this->owner->renderWith('Includes/Picture');
+        return $this->owner->renderWith('EvansHunt/LazyFocusFit/Picture');
     }
 
     /**
@@ -71,7 +71,7 @@ class LazyFocusFitImageExtension extends DataExtension
     {
         $this->populateResponsiveImageAttributes($arguments);
 
-        return $this->owner->renderWith('Includes/ResponsiveBgAttributes');
+        return $this->owner->renderWith('EvansHunt/LazyFocusFit/BackgroundAttributes');
     }
 
     private function populateResponsiveImageAttributes($arguments)
