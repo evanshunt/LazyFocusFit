@@ -18,7 +18,7 @@
     <img
         class="lazyload"
         src="$TinySrc"
-        width="$CroppedWidth"
+        width="$Width"
         height="$CroppedHeight"
         alt="$Caption"
         $ImgAttributeString

@@ -4,7 +4,7 @@
     data-original-width="$Width"
     data-original-height="$Height"
     src="$TinySrc"
-    width="$CroppedWidth"
+    width="$Width"
     height="$CroppedHeight"
     alt="$Caption"
     data-srcset="$ImgSrcset"

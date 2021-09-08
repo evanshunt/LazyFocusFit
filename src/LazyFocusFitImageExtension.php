@@ -234,18 +234,12 @@ class LazyFocusFitImageExtension extends DataExtension
         return $this->owner;
     }
 
-    //@TODO: these two may need refinement
+    // Original width will be used for html width attribute
+    // Height attribute is width/aspect ratio
     public function CroppedHeight()
     {
         return $this->owner->AspectRatio
             ? round($this->owner->Width / $this->owner->AspectRatio)
             : $this->owner->Height;
-    }
-
-    public function CroppedWidth()
-    {
-        return $this->owner->AspectRatio
-            ? round($this->owner->Height * $this->owner->AspectRatio)
-            : $this->owner->Width;
     }
 }
