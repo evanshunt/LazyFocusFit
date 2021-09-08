@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "802389774ddb25c241f5dda73acaddad",
+    "content-hash": "9087dcb1d21d8c41b47393f79e3201b1",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -693,7 +693,7 @@
         },
         {
             "name": "jonom/focuspoint",
-            "version": "4.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonom/silverstripe-focuspoint.git",
@@ -713,6 +713,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^5.7"
             },
+            "default-branch": true,
             "type": "silverstripe-vendormodule",
             "extra": {
                 "expose": [

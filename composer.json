@@ -16,7 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "jonom/focuspoint": "^4.0",
+        "jonom/focuspoint": "^3.1.3",
         "silverstripe/framework": "^4",
         "silverstripe/cms": "^4"
     }
