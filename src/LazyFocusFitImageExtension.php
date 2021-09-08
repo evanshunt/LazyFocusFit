@@ -16,6 +16,8 @@ class LazyFocusFitImageExtension extends DataExtension
     public $ImgAttributeString;
     public $AspectRatio;
     public $IsNaturalWidth = false;
+    public $ImgSrcset = '';
+    public $ImgSrc = '';
 
     private static $casting = [
         'AttributeString' => 'HTMLVarchar',
@@ -47,6 +49,42 @@ class LazyFocusFitImageExtension extends DataExtension
         $this->populateResponsiveImageAttributes($arguments);
 
         return $this->owner->renderWith('EvansHunt\\LazyFocusFit\\Picture');
+    }
+
+    /**
+     * ResponsiveImg - generates a <img> element with lazyloaded responsive sizing
+     *
+     * First argument should be className
+     * All subsequent arguments should be image widths in pixels
+     * Lazysizes will insert the correct image according to the rendered size
+     *
+     * Example:
+     * $Image.ResponsivePicture(classname, 800, 600, 300)
+     */
+
+    public function ResponsiveImg(...$arguments)
+    {
+        if (!$this->owner->Exists()) {
+            return null;
+        }
+
+        $srcsetArray = [];
+
+        $this->pictureClassString = array_shift($arguments);
+
+        foreach ($arguments as $argument) {
+            $sourceItems = explode(' ', $argument);
+            $size = array_shift($sourceItems);
+
+            if (is_numeric($size)) {
+                $image = $this->croppedImage($size);
+                $srcsetArray[] =  $image->URL . ' ' . $image->Width . 'w';
+            }
+        }
+
+        $this->owner->ImgSrcset = implode(", ", $srcsetArray);
+
+        return $this->owner->renderWith('EvansHunt\\LazyFocusFit\\Img');
     }
 
     /**
@@ -117,6 +155,7 @@ class LazyFocusFitImageExtension extends DataExtension
 
     // If using a value other than image title for alt tag
     // logic can be added here
+    // @Todo: add extension point
     public function Caption()
     {
         return $this->owner->Title;
