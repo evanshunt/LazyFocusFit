@@ -29,7 +29,7 @@ Additional methods allow configuring the images to use object-fit, crop accordin
 
 ### ResponsiveImg()
 
-This method allows generating an `<img>` tag with a number of possible image sizes. On page load a 32x32px image will be loaded and the correct size will be lazyloaded using LazySizes auto-sizes functionality. A future version may allow explicitly defining a sizes attribute or using the browser's built in responsive sizing w/o LazySizes.
+This method allows generating an `<img>` tag with a number of possible image sizes. On page load a 32px wide image will be loaded and the correct size will be lazyloaded using LazySizes auto-sizes functionality. A future version may allow explicitly defining a sizes attribute or using the browser's built in responsive sizing w/o LazySizes.
 
 **Example**
 
