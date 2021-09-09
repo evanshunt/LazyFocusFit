@@ -195,7 +195,8 @@ class LazyFocusFitImageExtension extends DataExtension
         return $this->autoSizesBoolean;
     }
 
-    // Adds any attribute to the <picture> element returned by ResponsivePicture()
+    // Adds any attribute to the <picture> element returned by ResponsivePicture() or the <img> element
+    // returned by ResponsiveImg
     public function AddAttribute($name, $value = null)
     {
         $this->owner->AttributeString .= $this->owner->AttributeString ? ' ' : '';
