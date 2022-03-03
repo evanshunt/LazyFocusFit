@@ -26,9 +26,9 @@
             data-sizes="auto"
         <% end_if %>
         <%if $IsObjectFit %>
-            style="object-position: $PercentageX% $PercentageY%;"
+            style="object-position: $FocusPoint.PercentageX% $FocusPoint.PercentageY%;"
             data-object-fit="$ObjectFitType"
-            data-object-position="$PercentageX% $PercentageY%"
+            data-object-position="$FocusPoint.PercentageX% $FocusPoint.PercentageY%"
         <% end_if %>
     >
 </picture>
