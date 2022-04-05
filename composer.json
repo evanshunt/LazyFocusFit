@@ -15,9 +15,21 @@
         }
     ],
     "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/lerni/silverstripe-focuspoint"
+        }
+    ],
     "require": {
-        "jonom/focuspoint": "^4.0.2",
+        "jonom/focuspoint": "dev-getHeight-getWidth as 4.0.3",
         "silverstripe/framework": "^4",
         "silverstripe/cms": "^4"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true
+        }
     }
 }
