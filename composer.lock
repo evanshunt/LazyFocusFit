@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d3b009cb6ddd1f9c05db4bb2d21be93",
+    "content-hash": "fde953be1a6dc5f11ffd051bfa45b981",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -843,16 +843,16 @@
         },
         {
             "name": "jonom/focuspoint",
-            "version": "dev-getHeight-getWidth",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/lerni/silverstripe-focuspoint.git",
-                "reference": "214fc4ea10a8bec393d78e41b9f71e07a54b37cf"
+                "url": "https://github.com/jonom/silverstripe-focuspoint.git",
+                "reference": "9916133a6547a12fb53675cec36cba711f0ac6ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lerni/silverstripe-focuspoint/zipball/214fc4ea10a8bec393d78e41b9f71e07a54b37cf",
-                "reference": "214fc4ea10a8bec393d78e41b9f71e07a54b37cf",
+                "url": "https://api.github.com/repos/jonom/silverstripe-focuspoint/zipball/9916133a6547a12fb53675cec36cba711f0ac6ec",
+                "reference": "9916133a6547a12fb53675cec36cba711f0ac6ec",
                 "shasum": ""
             },
             "require": {
@@ -878,6 +878,7 @@
                     "JonoM\\FocusPoint\\Tests\\": "tests/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -897,9 +898,20 @@
                 "silverstripe"
             ],
             "support": {
-                "source": "https://github.com/lerni/silverstripe-focuspoint/tree/getHeight-getWidth"
+                "issues": "https://github.com/jonom/silverstripe-focuspoint/issues",
+                "source": "https://github.com/jonom/silverstripe-focuspoint/tree/4.0.3"
             },
-            "time": "2021-12-14T13:31:55+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/jmnz",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonom",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-07-06T16:59:58+00:00"
         },
         {
             "name": "league/csv",
@@ -4792,18 +4804,9 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [
-        {
-            "package": "jonom/focuspoint",
-            "version": "dev-getHeight-getWidth",
-            "alias": "4.0.3",
-            "alias_normalized": "4.0.3.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "jonom/focuspoint": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
