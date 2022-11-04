@@ -11,12 +11,12 @@
     data-sizes="auto"
     <%if $IsObjectFit %>
         data-object-fit="$ObjectFitType"
-        data-object-position="$PercentageX% $PercentageY%"
+        data-object-position="$FocusPoint.PercentageX% $FocusPoint.PercentageY%"
     <% end_if %>
 
     style="
         <%if $IsObjectFit %>
-            object-position: $PercentageX% $PercentageY%;
+            object-position: $FocusPoint.PercentageX% $FocusPoint.PercentageY%;
         <% end_if %>
         <% if $IsNaturalWidth %>
             max-width: {$Width}px;
