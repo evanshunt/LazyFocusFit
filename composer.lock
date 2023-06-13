@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fde953be1a6dc5f11ffd051bfa45b981",
+    "content-hash": "7831e967558c012a47b9176c506c85d5",
     "packages": [
+        {
+            "name": "bigfork/silverstripe-webp-formatter",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bigfork/silverstripe-webp-formatter.git",
+                "reference": "cce37a6f23dd4c236eff62b64947a40c5b8957ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bigfork/silverstripe-webp-formatter/zipball/cce37a6f23dd4c236eff62b64947a40c5b8957ac",
+                "reference": "cce37a6f23dd4c236eff62b64947a40c5b8957ac",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4 || ^5"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "Bigfork\\SilverstripeWebpFormatter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Bigfork",
+                    "homepage": "https://www.bigfork.co.uk"
+                }
+            ],
+            "description": "Adds a .Webp() format option for converting images to webp",
+            "support": {
+                "issues": "https://github.com/bigfork/silverstripe-webp-formatter/issues",
+                "source": "https://github.com/bigfork/silverstripe-webp-formatter/tree/1.0.1"
+            },
+            "time": "2023-06-08T08:18:04+00:00"
+        },
         {
             "name": "bramus/ansi-php",
             "version": "3.1",

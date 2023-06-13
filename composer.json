@@ -18,7 +18,8 @@
     "require": {
         "jonom/focuspoint": "^4.0.3",
         "silverstripe/framework": "^4",
-        "silverstripe/cms": "^4"
+        "silverstripe/cms": "^4",
+        "bigfork/silverstripe-webp-formatter": "^1.0.1"
     },
     "config": {
         "allow-plugins": {

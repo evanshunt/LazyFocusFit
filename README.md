@@ -7,6 +7,7 @@ A SilverStripe module with template methods to quickly make use of [FocusPoint](
 **PHP**
 
 * [FocusPoint](https://github.com/jonom/silverstripe-focuspoint)
+* [Silverstripe Webp Formatter](https://github.com/bigfork/silverstripe-webp-formatter)
 
 **JS/CSS**
 
@@ -20,6 +21,15 @@ A SilverStripe module with template methods to quickly make use of [FocusPoint](
 `composer require evanshunt/lazy-focus-fit`
 
 After installing this module, ensure front-end requirements are installed and properly initiated within your project.
+
+## Config values
+
+If you wish to serve all images as WebP set the following in your yaml config.
+
+```yml
+SilverStripe\Assets\Image:
+  default_webp: true
+```
 
 ## Usage
 
@@ -110,4 +120,14 @@ By default `object-fit: cover;` is applied, but alternative values (fill, contai
 ```
 $Image.ObjectFit().ResponsivePicture(classname, 770 992px, 496 default)
 $Image.ObjectFit(contain).ResponsivePicture(classname, 770 992px, 496 default)
+```
+
+#### UseWebP()
+
+If you haven't set the global config value to serve WebP, you can opt in for an individual image by calling this method. Must be called before the markup generating method.
+
+**Example**
+
+```
+$Image.UseWebP.ResponsivePicture(classname, 770 992px, 496 default)
 ```

@@ -2,14 +2,20 @@
 
 namespace EvansHunt\LazyFocusFit;
 
+use SilverStripe\Core\Config\Configurable;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataExtension;
 
 class LazyFocusFitImageExtension extends DataExtension
 {
+    use Configurable;
+
+    private static $default_webp = false;
+
     private $pictureClassString;
     private $pictureSrcArray;
     private $autoSizesBoolean;
+    private $serveWp = false;
 
     public $IsObjectFit = false;
     public $AttributeString;
@@ -175,19 +181,23 @@ class LazyFocusFitImageExtension extends DataExtension
 
             if ($this->owner->AspectRatio) {
                 if ($this->owner->AspectRatio > $originalRatio) {
-                    return $this->owner
+                    $scaledImage = $this->owner
                         ->Resampled()
                         ->FocusCropHeight(round($this->owner->Width / $this->owner->AspectRatio))
                         ->ScaleMaxWidth($size);
                 }
-                return $this->owner
+                $scaledImage = $this->owner
                     ->Resampled()
                     ->FocusCropWidth(round($this->owner->Height * $this->owner->AspectRatio))
                     ->ScaleMaxWidth($size);
             }
         }
 
-        return $this->owner->Resampled()->ScaleMaxWidth($size);
+        $scaledImage = $this->owner->Resampled()->ScaleMaxWidth($size);
+
+        return ($this->owner->config()->get('default_webp') || $this->owner->serveWebP)
+            ? $scaledImage->Webp()
+            : $scaledImage;
     }
 
     public function AutoSizes()
@@ -242,5 +252,11 @@ class LazyFocusFitImageExtension extends DataExtension
         return $this->owner->AspectRatio
             ? round($this->owner->Width / $this->owner->AspectRatio)
             : $this->owner->Height;
+    }
+
+    public function UseWebP()
+    {
+        $this->owner->serveWebP = true;
+        return $this->owner;
     }
 }
