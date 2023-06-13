@@ -2,14 +2,11 @@
 
 namespace EvansHunt\LazyFocusFit;
 
-use SilverStripe\Core\Config\Configurable;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\DataExtension;
 
 class LazyFocusFitImageExtension extends DataExtension
 {
-    use Configurable;
-
     private static $default_webp = false;
 
     private $pictureClassString;
