@@ -179,22 +179,21 @@ class LazyFocusFitImageExtension extends DataExtension
             if ($this->owner->AspectRatio) {
                 if ($this->owner->AspectRatio > $originalRatio) {
                     $scaledImage = $this->owner
-                        ->Resampled()
                         ->FocusCropHeight(round($this->owner->Width / $this->owner->AspectRatio))
                         ->ScaleMaxWidth($size);
+                } else {
+                    $scaledImage = $this->owner
+                        ->FocusCropWidth(round($this->owner->Height * $this->owner->AspectRatio))
+                        ->ScaleMaxWidth($size);
                 }
-                $scaledImage = $this->owner
-                    ->Resampled()
-                    ->FocusCropWidth(round($this->owner->Height * $this->owner->AspectRatio))
-                    ->ScaleMaxWidth($size);
+            } else {
+                $scaledImage = $this->owner->ScaleMaxWidth($size);
             }
+
+            return ($this->owner->config()->get('default_webp') || $this->owner->serveWebP)
+                ? $scaledImage->Webp()
+                : $scaledImage;
         }
-
-        $scaledImage = $this->owner->Resampled()->ScaleMaxWidth($size);
-
-        return ($this->owner->config()->get('default_webp') || $this->owner->serveWebP)
-            ? $scaledImage->Webp()
-            : $scaledImage;
     }
 
     public function AutoSizes()
