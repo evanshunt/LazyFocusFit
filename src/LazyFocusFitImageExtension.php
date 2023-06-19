@@ -173,7 +173,8 @@ class LazyFocusFitImageExtension extends DataExtension
 
     private function croppedImage($size)
     {
-        if ($this->owner->exists()) {
+        // SVGs have no height, so we can't crop them
+        if ($this->owner->exists() && $this->owner->Height) {
             $originalRatio = $this->owner->Width / $this->owner->Height;
 
             if ($this->owner->AspectRatio) {
@@ -194,6 +195,8 @@ class LazyFocusFitImageExtension extends DataExtension
                 ? $scaledImage->Webp()
                 : $scaledImage;
         }
+
+        return $this->owner;
     }
 
     public function AutoSizes()
