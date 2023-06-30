@@ -22,6 +22,12 @@ A SilverStripe module with template methods to quickly make use of [FocusPoint](
 
 After installing this module, ensure front-end requirements are installed and properly initiated within your project.
 
+```js
+import 'lazysizes';
+// The bgSet plugin is required for ResponsiveBgAttributes
+import 'lazysizes/plugins/bgset/ls.bgset';
+```
+
 ## Config values
 
 If you wish to serve all images as WebP set the following in your yaml config.
@@ -64,6 +70,8 @@ $Image.ResponsivePicture(classname, 770 992px, 496 default)
 ```
 
 ### ResponsiveBgAttributes
+
+_Requires Lazysizes bgSet plugin_
 
 This method generates html attributes, not an entire element, it is used to apply a background image. The arguments operate the same way as `ResponsivePicture()`
 
