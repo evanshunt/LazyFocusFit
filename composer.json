@@ -16,9 +16,9 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "jonom/focuspoint": "^4.0.3",
-        "silverstripe/framework": "^4",
-        "silverstripe/cms": "^4",
+        "jonom/focuspoint": "^5",
+        "silverstripe/framework": "^5",
+        "silverstripe/cms": "^5",
         "bigfork/silverstripe-webp-formatter": "^1.0.1"
     },
     "config": {
